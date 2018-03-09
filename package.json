@@ -1,13 +1,14 @@
 {
-  "name": "redux-helpers",
+  "name": "redux-awesome-sauce",
   "version": "0.0.1",
-  "description": "Redux helpers",
+  "description": "Redux Awesome Sauce -- Helpers for Redux",
   "main": "dist/index.js",
   "repository":
     "https://github.com/abustamam/redux-helpers",
   "scripts": {
     "test": "jest",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepublish": "npm run build"
   },
   "keywords": ["redux", "helpers"],
   "author": "Rasheed Bustamam",
