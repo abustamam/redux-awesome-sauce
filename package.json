@@ -1,0 +1,31 @@
+{
+  "name": "redux-helpers",
+  "version": "0.0.1",
+  "description": "Redux helpers",
+  "main": "dist/index.js",
+  "repository":
+    "https://github.com/abustamam/redux-helpers",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c"
+  },
+  "keywords": ["redux", "helpers"],
+  "author": "Rasheed Bustamam",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jest": "^22.4.2",
+    "rollup": "^0.56.5",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-filesize": "^1.5.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.5"
+  }
+}
