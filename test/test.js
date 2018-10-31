@@ -322,6 +322,19 @@ describe('Create Api Actions', () => {
     expect(creators.customFailure()).toBe(345)
   })
 
+
+  it('useLoader option works', () => {
+    const { creators } = createApiActions({
+      loader: {
+        request: ['id'],
+      },
+    }, { useLoader: true, prefix: '' })
+    const {
+      loaderRequest,
+    } = creators
+    expect(typeof(loaderRequest('foo').then)).toBe('function')
+  })
+
   it('action types prefix is supported', () => {
     const { types, creators } = createApiActions(
       { helloWorld: null },
