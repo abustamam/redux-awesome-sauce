@@ -1,6 +1,6 @@
 {
   "name": "redux-awesome-sauce",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Redux Awesome Sauce -- Helpers for Redux",
   "main": "dist/index.js",
   "repository": "https://github.com/abustamam/redux-awesome-sauce",
