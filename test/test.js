@@ -308,6 +308,20 @@ describe('Create Api Actions', () => {
     expect(creators.customFailure()).toBe(345)
   })
 
+  it('mixed action creators are supported', () => {
+    const { creators } = createApiActions({
+      custom: {
+        request: ['x'],
+        success: () => 234,
+        failure: () => 345,
+      },
+    })
+    expect(creators.customRequest('foo'))
+      .toEqual(({ type: 'CUSTOM_REQUEST', payload: { x: 'foo' } }))
+    expect(creators.customSuccess()).toBe(234)
+    expect(creators.customFailure()).toBe(345)
+  })
+
   it('action types prefix is supported', () => {
     const { types, creators } = createApiActions(
       { helloWorld: null },
