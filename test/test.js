@@ -324,15 +324,24 @@ describe('Create Api Actions', () => {
 
 
   it('useLoader option works', () => {
-    const { creators } = createApiActions({
+    const { creators, types } = createApiActions({
       loader: {
         request: ['id'],
+        success: ['res'],
+        failure: ['error'],
       },
     }, { useLoader: true, prefix: '' })
     const {
       loaderRequest,
+      loaderSuccess,
+      loaderFailure,
     } = creators
+    const { LOADER_SUCCESS, LOADER_FAILURE } = types
     expect(typeof(loaderRequest('foo').then)).toBe('function')
+    expect(loaderSuccess('foo'))
+      .toEqual({ type: LOADER_SUCCESS, payload: { res: 'foo' } })
+    expect(loaderFailure('err'))
+      .toEqual({ type: LOADER_FAILURE, payload: { error: 'err' } })
   })
 
   it('useLoader option works without specification', () => {
