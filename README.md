@@ -1,6 +1,6 @@
 ## Redux Helpers
 
-This is a basic port of https://github.com/infinitered/reduxsauce
+This is a simple fork of https://github.com/infinitered/reduxsauce
 
 Most of the original documentation stands, with a few differences, as can be seen in this code example:
 
@@ -60,3 +60,18 @@ loginRequest('abustamam', 'foobar')
 ```
 
 Those are the additions I made, and it makes working with redux sagas a lot simpler.
+
+If you want to use [`redux-dataloader`](https://github.com/kouhin/redux-dataloader), just add the `useLoader` option:
+
+```js
+const {
+  types: apiTypes,
+  creators: apiCreators,
+} = createApiActions({
+  login: {
+    request: ['user', 'password'],
+    success: ['response'],
+    failure: ['error'],
+  },
+}, { useLoader: true })
+```

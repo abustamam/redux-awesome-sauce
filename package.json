@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "repository": "https://github.com/abustamam/redux-awesome-sauce",
   "scripts": {
-    "test": "jest",
+    "test": "jest --env=node",
     "build": "rollup -c",
     "prepublish": "npm run build"
   },
