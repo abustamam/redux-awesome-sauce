@@ -335,6 +335,16 @@ describe('Create Api Actions', () => {
     expect(typeof(loaderRequest('foo').then)).toBe('function')
   })
 
+  it('useLoader option works without specification', () => {
+    const { creators } = createApiActions({
+      loader: {},
+    }, { useLoader: true, prefix: '' })
+    const {
+      loaderRequest,
+    } = creators
+    expect(typeof(loaderRequest().then)).toBe('function')
+  })
+
   it('action types prefix is supported', () => {
     const { types, creators } = createApiActions(
       { helloWorld: null },
